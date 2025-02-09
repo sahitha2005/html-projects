@@ -1,0 +1,197 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION FORM</title>
+    <style>
+    	body{
+    		font-family: Arial, sans-serif;
+            background-color: pink;
+            margin: 10px;
+            padding: 250px; ;
+    	}
+    	.container{
+    		max-width: 50%;
+    		margin: 0 auto;
+    		background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 3, 1.1);
+    	}
+    	h3{
+    		text-align: center;
+    		color: purple;
+    		margin-bottom: 30px;
+    	}
+    	.form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="date"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .radio-group,
+        .checkbox-group {
+            margin: 10px 0;
+        }
+        .radio-group label,
+        .checkbox-group label {
+            display: inline-block;
+            margin-right: 15px;
+        } 
+        input[type="submit"] {
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #1557b0;
+        }   
+    </style>	
+</head>
+<body>
+	<div class="container">
+	<form name="registrationForm" onsubmit="return validateForm()" method="POST">
+	<h3>registration form</h3>
+	
+	<div class="form-group">
+	    <label for="first name">Firstname</label>
+	    <input type="text" id="firstname" name="firstname">
+	</div>
+
+	<div class="form-group">
+		<label for="lastname" >Lastname</label>
+		<input type="text" id="lastname"name="lastname">
+	</div>
+
+    <div class="form-group">
+    	<label for="password">password</label>
+    	<input type="password" id="password" name="password">
+    </div>
+    <div class="form-group">
+         <label for="date of birth">date of birth</label>
+         <input type="date" id="date of birth" name="date of birth">
+    </div>
+    <div class="form-group">
+         <label>Gender*</label>
+         <div class="radio-group">
+         <input type="radio" id="male" name="Gender" value="male">
+         <label for="male">male</label>
+         <input type="radio"id="female" name="Gender" value="female">
+         <label for="female">female</label>	
+         <input type="radio"id="others" name="Gender" value="others">
+         <label for="others">others</label>
+     </div></div> 
+     <div class="form-group">
+     	<label for="address">address</label>
+     	<input type="text"id="address" name="address">
+     </div> 
+     <div class="form-group">
+     	<label for="course"> course</label>
+     	<select id="course" name="course">
+     		<option value="">select course</option>
+     		<option value="mca">mca</option>
+     		<option value="mba">mba</option>
+     		<option value="msc">msc</option>
+     	</select>
+     </div>  
+     <div class="form-group">
+     	<label>hobbbies</label>
+     	<div class="checkbox-group">
+     		<input type="checkbox" id="studying" name="hobbbies"value="studying">
+     		<label for="studying">studying</label><br>
+     		<input type="checkbox" id="watching movies" name="hobbies" value="watching movies">
+                    <label for="watching movies">watching movies</label><br>
+                    <input type="checkbox" id="chess" name="hobbies" value="chess">
+                    <label for="chess">chess</label><br>
+                    <input type="checkbox" id="reading novels" name="hobbies" value="reading novels">
+                    <label for="reading novels">reading novels</label><br>
+                    <input type="checkbox" id="video games" name="hobbies" value=" video games">
+                    <label for="video games">Online video games</label><br>
+                    <input type="checkbox" id="dancing" name="hobbies" value="Dancing">
+                    <label for="dancing">Dancing</label>
+     	</div>
+     </div>
+
+     <input type="submit" value="submit">
+	</div>
+</div>
+	</form>	
+    <script>
+  function validateForm() {
+    
+    var firstname = document.forms["registrationForm"]["firstname"].value;
+    var lastname = document.forms["registrationForm"]["lastname"].value;
+    var password = document.forms["registrationForm"]["password"].value;
+    var dob = document.forms["registrationForm"]["date of birth"].value;
+    var gender = document.forms["registrationForm"]["Gender"].value;
+    var address = document.forms["registrationForm"]["address"].value;
+    var course = document.forms["registrationForm"]["course"].value;
+    
+  
+    if (firstname == "" || lastname == "") {
+      alert("First and Last Name must be filled out.");
+      return false;
+    }
+    
+    
+    if (password == "") {
+      alert("Password must be filled out.");
+      return false;
+    }
+
+    
+    if (dob == "") {
+      alert("Date of birth must be filled out.");
+      return false;
+    }
+
+  
+    if (gender == "") {
+      alert("Please select your gender.");
+      return false;
+    }
+
+    
+    if (address == "") {
+      alert("Address must be filled out.");
+      return false;
+    }
+
+    
+    if (course == "") {
+      alert("Please select a course.");
+      return false;
+    }
+
+    var hobbies = document.querySelectorAll('input[name="hobbies"]:checked');
+    if (hobbies.length == 0) {
+      alert("Please select at least one hobby.");
+      return false;
+    }
+    
+    alert("Registration successful!");
+    return true; 
+  }
+</script>
+
+</body>
+</html>
