@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SONGS</title>
+	<style>
+		body{
+			margin: 0px;
+			padding: 0px;
+		}
+		#d9{
+			width: 100%;
+			height: 640px;
+			background-color: gray;
+		}
+		#d7{
+			width: 100%;
+			height: 300px;
+			background-color: pink;
+		}
+		#d8{
+			width: 100%;
+			height: 340px;
+			background-color: lightblue;
+		}
+		#d1{
+			width: 30%;
+			height: 300px;
+			background-color: pink;
+			float: left;
+			font-size: 30px;
+		}
+		#d2{
+			width: 40%;
+			height: 300px;
+			background-color: lightskyblue;
+			float: left;
+			font-size: 30px;
+		}
+		#d3{
+			width: 30%;
+			height: 300px;
+			background-color: lightseagreen;
+			float: right;
+			font-size: 30px;
+		}
+		#d4{
+			width: 30%;
+			height: 340px;
+			background-color: violet;
+			float: left;
+		}
+		#d5{
+			width: 40%;
+			height: 340px;
+			background-color: lightblue;
+			float: left;
+		}
+		#d6{
+			width: 30%;
+			height: 340px;
+			background-color: lightcoral;
+			float: right;
+		}
+		#d4{
+			font-size: 30px;
+		}
+		#d5{
+			font-size: 30px;
+		}
+		#d6{
+			font-size: 30px;
+		}
+	</style>
+	<script type="text/javascript">
+		function sample1(){
+			document.getElementById("d4").innerHTML=" Undiporaadhey<br>Gundey Needheyley..!<br><br>Hatthukoraadhey<br>Gundekey Nanney " ;
+			let audio = document.getElementById("audio1");
+			audio.play();
+			
+			
+		}
+		function sample2(){
+			document.getElementById("d5").innerHTML="Chuttamalle Chuttestandhi<br>Thuntari Choopu<br>Oorike Undadhu Kasepu<br>Athamaanam Nee Lokame<br>Naa Mai Marapu<br>Chethanaithe Nuvve Nannapu"
+			let audio1 = document.getElementById("audio2");
+			audio1.play();
+			
+		}
+		function sample3(){
+			document.getElementById("d6").innerHTML="Kannazhaga.. Kaalazhaga..<br>Pon Azhaga.. Pen Aazhaga..<br>Engeyo Thedi Sellum Viral Azhaga?<br>En Kaigal Koorthu Kollum Vitham Alaga?<br>Uyire Uyire Unai Vida Ethuvum<br>Uyiril Perithaai Illaiyadi ";
+			let audio2 = document.getElementById("audio3");
+			audio2.play();
+			
+		}
+		function clearlyrics(){
+			document.getElementById("d4").innerHTML="";
+			document.getElementById("d5").innerHTML="";
+			document.getElementById("d6").innerHTML="";
+			let audio = document.getElementById("audio1");
+			audio.pause();
+			audio.currentTime = 0;
+			let audio1 = document.getElementById("audio2");
+			audio1.pause();
+			audio1.currentTime = 0;
+			let audio2 = document.getElementById("audio3");
+			audio2.pause();
+			audio2.currentTime = 0;
+		}
+		
+	</script>
+</head>
+<body>
+     <div id="d9">
+     	<div id="d7">
+     		<div id="d1" onmouseover="sample1()" onmouseout="clearlyrics()">UNDIPORADHEY<br><img src="song1.jpg" height="260px" width="100%"></img><br><br><br><br><br><br> <audio id="audio1"><source src="song1.mp3"type="audio/mp3"></audio></div>
+     		<div id="d2" onmouseover="sample2()" onmouseout="clearlyrics()">CHUTTAMALLE<br><img src="song2.jpg"height="260px" width="100%"></img><audio id="audio2"><source src="song2.mp3"type="audio/mp3"></audio></div>
+     		<div id="d3" onmouseover="sample3()" onmouseout="clearlyrics()">KANNAZHAGA<br><img src="song3.jpg" height="260px" width="100%"></img><audio id="audio3"><source src="song3.mp3"type="audio/mp3"></audio></div>
+     	</div>
+     	<div id="d8">
+     		<div id="d4"></div>
+     		<div id="d5"></div>
+     		<div id="d6"></div>
+     	</div>
+     </div>
+</body>
+</html>
